@@ -17,7 +17,7 @@ def isInLine(p1, p2):
 List_Of_Stations = []
 
 class Station:
-    def __init__(self, stationList=[], name="0", location=[0,0], connections=[]):
+    def __init__(self, name="0", location=[0,0], connections=[]):
         # Name of the station: String
         self.name = name
         # Location of the station: List [x (Integer),y (Integer)]
@@ -35,7 +35,7 @@ class Station:
     def getConnections(self):
         print("List of connections from " + self.name + ":")
         for conn in self.connections:
-            print(conn)
+            print(conn.name)
             
     def connect(self, station):
         # Simply connect two stations together
@@ -48,15 +48,27 @@ class Station:
         # For now, Just N, E, S, W
         for station in stationList:
             # probably should have type safety
+            print("Testing "+self.name+" and "+station.name)
             if isInLine(self.location, station.location):
-                
+                print("Connecting "+self.name+" at " +str(self.location)+" to "+station.name+" at "+str(station.location))
                 self.connect(station)
     
             
             
-s1 = Station([], "station1", [1,1])
-s2 = Station([s1], "station2", [1,3])
+s1 = Station("station1", [1,1])
+print(List_Of_Stations)
+s2 = Station("station2", [1,3])
+print(List_Of_Stations)
+s3 = Station("station3", [2,2])
+print(List_Of_Stations)
+s4 = Station("station4", [4,10])
+print(List_Of_Stations)
+s5 = Station("station5", [2,1])
+print(List_Of_Stations)
 
 s1.getConnections()
 s2.getConnections()
+s3.getConnections()
+s4.getConnections()
+s5.getConnections()
 
