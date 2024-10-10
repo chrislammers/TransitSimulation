@@ -8,9 +8,10 @@ Created on Mon Jan 22 18:41:59 2024
 # this will be used later when I add people movement.
 
 class Vehicle:
-    def __init__(self, capacity, riders=1):
+    def __init__(self, capacity, riders=1, stopTime=0):
         self.capacity = capacity
         self.riders = riders
+        self.stopTime = stopTime
     def __str__(self):
         return "Vehicle with " + str(self.riders) + " riders."
         
