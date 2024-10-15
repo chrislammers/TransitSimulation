@@ -25,8 +25,8 @@ class Station:
         self.location = location
         # List of other Stations to possibly connect to: List []
         # ONLY use connections in the constructor for custom, non 45 degree angle connections.
-        self.connections = connections
-        
+        self.connections = connections.copy()
+            
         self.createConnections(List_Of_Stations)
         # This will need some sort of check to see if the
         
@@ -40,7 +40,10 @@ class Station:
     def connect(self, station):
         # Simply connect two stations together
         self.connections.append(station)
-        station.connections.append(self)
+        
+        # station.connections.append(self)
+        
+        
     
     def createConnections(self, stationList):
         # stationList is a list of existing stations.
@@ -52,23 +55,33 @@ class Station:
             if isInLine(self.location, station.location):
                 print("Connecting "+self.name+" at " +str(self.location)+" to "+station.name+" at "+str(station.location))
                 self.connect(station)
+                station.connect(self)
     
             
             
 s1 = Station("station1", [1,1])
 print(List_Of_Stations)
+print("")
 s2 = Station("station2", [1,3])
 print(List_Of_Stations)
+print("")
 s3 = Station("station3", [2,2])
 print(List_Of_Stations)
+print("")
 s4 = Station("station4", [4,10])
 print(List_Of_Stations)
+print("")
 s5 = Station("station5", [2,1])
 print(List_Of_Stations)
+print("")
+s6 = Station("station6", [8,8])
+print(List_Of_Stations)
+print("")
 
 s1.getConnections()
 s2.getConnections()
 s3.getConnections()
 s4.getConnections()
 s5.getConnections()
+s6.getConnections()
 
