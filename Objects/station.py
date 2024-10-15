@@ -30,12 +30,19 @@ class Station:
         self.createConnections(List_Of_Stations)
         # This will need some sort of check to see if the
         
+        
+        # This global variable should work
         List_Of_Stations.append(self)
     
     def getConnections(self):
         print("List of connections from " + self.name + ":")
         for conn in self.connections:
             print(conn.name)
+    
+
+    def connectTwoWay(self, station):
+        self.connections.append(station)
+        station.connections.append(self)
             
     def connect(self, station):
         # Simply connect two stations together
@@ -54,34 +61,33 @@ class Station:
             print("Testing "+self.name+" and "+station.name)
             if isInLine(self.location, station.location):
                 print("Connecting "+self.name+" at " +str(self.location)+" to "+station.name+" at "+str(station.location))
-                self.connect(station)
-                station.connect(self)
+                self.connectTwoWay(station)
     
             
             
-s1 = Station("station1", [1,1])
-print(List_Of_Stations)
-print("")
-s2 = Station("station2", [1,3])
-print(List_Of_Stations)
-print("")
-s3 = Station("station3", [2,2])
-print(List_Of_Stations)
-print("")
-s4 = Station("station4", [4,10])
-print(List_Of_Stations)
-print("")
-s5 = Station("station5", [2,1])
-print(List_Of_Stations)
-print("")
-s6 = Station("station6", [8,8])
-print(List_Of_Stations)
-print("")
+# s1 = Station("station1", [1,1])
+# print(List_Of_Stations)
+# print("")
+# s2 = Station("station2", [1,3])
+# print(List_Of_Stations)
+# print("")
+# s3 = Station("station3", [2,2])
+# print(List_Of_Stations)
+# print("")
+# s4 = Station("station4", [4,10])
+# print(List_Of_Stations)
+# print("")
+# s5 = Station("station5", [2,1])
+# print(List_Of_Stations)
+# print("")
+# s6 = Station("station6", [8,8])
+# print(List_Of_Stations)
+# print("")
 
-s1.getConnections()
-s2.getConnections()
-s3.getConnections()
-s4.getConnections()
-s5.getConnections()
-s6.getConnections()
+# s1.getConnections()
+# s2.getConnections()
+# s3.getConnections()
+# s4.getConnections()
+# s5.getConnections()
+# s6.getConnections()
 
