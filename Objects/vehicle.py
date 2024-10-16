@@ -16,9 +16,9 @@ class Vehicle:
         return "Vehicle with " + str(self.riders) + " riders."
         
 class Bus(Vehicle):
-    def __init__(self, capacity, riders, route):
+    def __init__(self, capacity, riders):
         super().__init__(capacity, riders)
-        self.route = route
+        # self.route = route
     def __str__(self):
         return "Bus " + str(self.route) + " with " + str(self.riders) + " riders."
 
