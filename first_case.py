@@ -6,6 +6,7 @@ Created on Tue Oct 15 20:05:18 2024
 """
 
 from Objects.station import Station
+from Objects.route import Route
             
 s1 = Station("station1", [1,1])
 print("")
@@ -15,6 +16,8 @@ print("")
 
 s1.getConnections()
 s2.getConnections()
+
+
 
 
 

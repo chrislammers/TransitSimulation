@@ -5,7 +5,7 @@ Created on Mon Jan 22 18:23:38 2024
 @author: chris
 """
 
-import vehicle as vh
+import Objects.vehicle as vh
 # from station import Station
 
 
@@ -18,9 +18,13 @@ class Route:
     
     def addStation(self, station, atStart=False):
         if not atStart:
+            # last station in self.stops must have the new station as a connection
             self.stops.append(station)
         else:
+            # first station in self.stops must have the new station as a connection
             self.stops.insert(0, station)
+            
+    
         
         
         
