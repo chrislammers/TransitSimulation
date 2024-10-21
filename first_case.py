@@ -17,7 +17,8 @@ print("")
 s1.getConnections()
 s2.getConnections()
 
+route = Route("Test Route", [s1, s2], 0)
 
-
+route.move()
 
 

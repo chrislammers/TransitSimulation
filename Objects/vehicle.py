@@ -49,7 +49,7 @@ class Rail(Vehicle):
         # length of vehicle (number of carriages)
         self.length = length
 
-bus = Bus(10, 5)
-print(bus)
-v1 = Vehicle(5, 1)
-print(v1)
+# bus = Bus(10, 5)
+# print(bus)
+# v1 = Vehicle(5, 1)
+# print(v1)
