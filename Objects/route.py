@@ -19,6 +19,8 @@ class Route:
         # this info is here for now, though move() and this could be moved elsewhere in the future
         self.direction = 1
         self.current_location = 0
+        
+        
     
     def addStation(self, station, atStart=False):
         if not atStart:
@@ -35,9 +37,16 @@ class Route:
         
         print("Moving from "+self.stops[self.current_location].name+" to "+self.stops[self.current_location+self.direction].name)
         self.current_location+=self.direction
+        # print(str(self.current_location+1)+">="+str(len(self.stops)))
+        # print("")
+        
         if self.current_location+1>=len(self.stops):
             self.direction = -1
-        if self.current_location-1 >= -1:
+            print("You've reached the end of the line")
+            return
+        if self.current_location-1 <= -1:
             self.direction = +1
+            print("You've reached the start of the line")
+            return
         
         
