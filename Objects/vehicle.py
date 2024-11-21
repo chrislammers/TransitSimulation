@@ -6,7 +6,6 @@ Created on Mon Jan 22 18:41:59 2024
 """
 
 # this will be used later when I add people movement.
-import time
 
 class Vehicle:
     def __init__(self, capacity, riders=1, stopTime=0):

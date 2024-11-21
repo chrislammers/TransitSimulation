@@ -7,6 +7,22 @@ Created on Mon Jan 22 18:23:38 2024
 
 import Objects.vehicle as vh
 # from station import Station
+import time
+import math
+# import numpy as np
+
+
+# function that calculates total time of the ride
+def ride_time(pointA, pointB, accel_time=2) -> int:
+    # function similar to below
+    # \sqrt{2\left(x-7\right)}\left\{x>10\right\}
+    
+    x = math.dist(pointA, pointB)
+    
+    t = math.sqrt(accel_time * (x - 7))
+    t2 = math.sqrt(accel_time * (-5))
+    
+    return max(t2, t)
 
 
 # At a basic level, this is linear, no branches
